@@ -42,6 +42,7 @@ form {
 }
 
 #question {
+  max-width: 75vw;
   flex-grow: 1;
   font-size: 1.7em;
   padding: 0.5em 0.75em;
@@ -49,7 +50,7 @@ form {
 
 button {
   border: none;
-  font-size: 1.5em;
+  font-size: 1.5vw;
   cursor: pointer;
   padding: 0.8em;
   border-left: 1px solid #000;
@@ -71,8 +72,8 @@ button:focus {
 #answer-background {
   display: flex;
   justify-content: center;
-  width: 30em;
-  height: 30em;
+  width: 33em;
+  height: 33em;
   background-image: radial-gradient(#0000ff 0%, transparent 81%);
   margin-top: 3em;
 }
@@ -108,7 +109,7 @@ button:focus {
 }
 
 #get-your-answer.die-down #answer {
-  bottom: 6em;
+  bottom: 6.3em;
 }
 
 #get-your-answer.die-up #answer {
