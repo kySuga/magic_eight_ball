@@ -1,45 +1,42 @@
-var answer = {
-  '1': 'It is\ncertain',
-  '2': 'Without\na\ndoubt',
-  '3': 'You may\nrely on\nit',
-  '4': 'As I see\nit\nyes',
-  '5': 'Most\nlikely',
-  '6': 'Outlook\ngood',
-  '7': 'Yes',
-  '8': 'Signs\npoint to\nyes',
-  '9': 'Reply hazy,\ntry\nagain',
-  '10': 'Ask again\nlater',
-  '11': 'Better\nnot tell\nyou\nnow',
-  '12': 'Cannot\npredict\nnow',
-  '13': 'Concentrate\nand ask\nagain',
-  '14': 'Don\'t\ncount\non\nit',
-  '15': 'My\nreply\nis\nno',
-  '16': 'My\nsources\nsay\nno',
-  '17': 'Outlook\nnot so\ngood'
-  // '18': 'It is\ndecidely\nso',
-  // '19': 'Yes\ndefinitely',
-  // '20': 'Very\ndoubtful'
-}
+var answers = [
+  { 'answer': 'It is<br>certain'}, 
+  { 'answer': 'Without<br>a<br>doubt'}, 
+  { 'answer': 'You may<br>rely on<br>it'}, 
+  { 'answer': 'As I see<br>it<br>yes'}, 
+  { 'answer': 'Most<br>likely'}, 
+  { 'answer': 'Outlook<br>good'}, 
+  { 'answer': 'Yes'}, 
+  { 'answer': 'Signs<br>point to<br>yes'}, 
+  { 'answer': 'Reply<br>hazy,<br>try again', 'direction': 'dieUp'},  //dieUp
+  { 'answer': 'Ask again<br>later'}, 
+  { 'answer': 'Better<br>not tell<br>you<br>now', 'direction': 'dieUp'},  //dieUp
+  { 'answer': 'Cannot<br>predict<br>now'}, 
+  { 'answer': 'Concentrate<br>and ask<br>again'}, 
+  { 'answer': 'Don\'t<br>count<br>on<br>it'}, 
+  { 'answer': 'My<br>reply<br>is<br>no'}, 
+  { 'answer': 'My<br>sources<br>say<br>no'}, 
+  { 'answer': 'Outlook<br>not so<br>good'}, 
+  { 'answer': 'It is<br>decidely<br>so'}, 
+  { 'answer': 'Yes<br>definitely', 'direction': 'dieUp'},  //dieUp 
+  { 'answer': 'Very<br>doubtful', 'direction': 'dieUp'} //dieUp
+]
 
-// randomAnswer takes answer and returns a random answer
-var randomAnswer = answer[Object.keys(answer)[Math.floor(Math.random() * Object.keys(answer).length)]];
-console.log(randomAnswer);
+
 
 
 // v2
 function clickSubmitQuestion() {
+  // randomAnswer takes answer and returns a random answer
+  var randomAnswerID = [Math.floor(Math.random() * answers.length)];
+  var randomAnswerObj = answers[randomAnswerID];
+  var randomAnswer = randomAnswerObj.answer;
+  console.log(randomAnswerObj);
+
   // Creates the p for the answer
   var createAnswer = document.createElement("p");
   createAnswer.setAttribute("id", "answer");
-  console.log("p for answer");
-
-  // Adds answer
-  var addAnswer = document.createTextNode(`${randomAnswer}`);
-  console.log("adds answer");
-
-  // Appends answer to p with id answer
-  createAnswer.appendChild(addAnswer);
-  console.log("appends answer to p");
+  createAnswer.innerHTML = `${randomAnswer}`;
+  console.log("p with random answer");
 
   // Creates div for gradient background
   var addBackground = document.createElement("div");
@@ -48,8 +45,15 @@ function clickSubmitQuestion() {
   // Creates div for die
   var addDie = document.createElement("div");
   addDie.setAttribute("id", "get-your-answer");
-  addDie.setAttribute("class", "die-down");
-  console.log("addDie");
+
+  // Determines orientation of die and answer
+  if (randomAnswerObj.direction != null && randomAnswerObj.direction == 'dieUp') {
+    addDie.setAttribute("class", "die-up");
+    console.log("addDieUP");
+  } else {
+    addDie.setAttribute("class", "die-down");
+    console.log("addDieDown");
+  }
 
   // Appends p for answer to die div
   addDie.appendChild(createAnswer);
@@ -59,13 +63,13 @@ function clickSubmitQuestion() {
   console.log("Appends addDie to addBackground");
 
   // Adds die with answer and background to magic eight ball page
-  var askQuestionSection = document.getElementById("ask-question-section");
-  askQuestionSection.parentNode.insertBefore(addBackground, askQuestionSection.nextSibling);
-
+  var answerWrapper = document.getElementById("answer-wrapper");
+  answerWrapper.innerHTML = addBackground.outerHTML;
 
   console.log("addBackground");
 
-}
+  return false;
+};
 
 
 

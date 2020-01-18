@@ -36,28 +36,25 @@
           <h2>
             Ask Your Question Below
           </h2>
-          <form method="POST">
+          <form onsubmit="return clickSubmitQuestion();">
             <input
               id="question"
               type="text"
               name="question"
               autocomplete="off"
+              minlength="3"
               maxlength="50"
               size="50"
               required
             />
             <!-- autocomplete removes any attempted questions or input  -->
-            <button
-              id="submitQuestion"
-              class="btn"
-              type="submit"
-              onclick="clickSubmitQuestion(); return false;"
-            >
+            <button id="submitQuestion" class="btn" type="submit">
               Submit Your Question
             </button>
             <!-- <button id="askAnother" class="btn" type="reset" onclick="removeAnswer()">Ask Another Question</button> -->
           </form>
         </div>
+        <div id="answer-wrapper"></div>
       </article>
     </section>
     <pre>
