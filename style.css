@@ -8,6 +8,10 @@ body {
   font-size: 10px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .main-content {
   display: flex;
   flex-direction: column;
@@ -16,20 +20,20 @@ body {
 }
 
 .main-content h1 {
-  font-size: 4.5vw;
+  font-size: 2.5vw;
   color: #fff;
   margin-bottom: 0.3em;
 }
 
 .ask-a-question h2 {
-  font-size: 3vw;
+  font-size: 1.5vw;
   color: #fff;
   text-align: center;
   margin-bottom: 0.8em;
 }
 
 #eight-ball-img {
-  width: 18vw;
+  width: 15vw;
   height: auto;
   margin: 2em;
 }
@@ -45,12 +49,12 @@ form {
   max-width: 75vw;
   flex-grow: 1;
   font-size: 1.7em;
-  padding: 0.5em 0.75em;
+  padding: 0.25em;
 }
 
 button {
   border: none;
-  font-size: 1.5vw;
+  font-size: 1vw;
   cursor: pointer;
   padding: 0.8em;
   border-left: 1px solid #000;
@@ -72,8 +76,8 @@ button:focus {
 #answer-background {
   display: flex;
   justify-content: center;
-  width: 33em;
-  height: 33em;
+  width: 40em;
+  height: 40em;
   background-image: radial-gradient(#0000ff 0%, transparent 81%);
   margin-top: 3em;
 }
@@ -82,38 +86,57 @@ button:focus {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 0;
+  width: 28%;
   height: 0;
-  top: 26%;
+  top: 30%;
   margin-top: 3em;
   border-left: 5.5em solid transparent;
   border-right: 5.5em solid transparent;
+  border-radius: 3px;
+  opacity: 1;
+  animation-name: dieFadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes dieFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#get-your-answer.die-up {
+  top: 100px;
+  border-bottom: 10em solid #0000ff;
 }
 
 #get-your-answer.die-down {
   border-top: 10em solid #0000ff;
 }
 
-#get-your-answer.die-up {
-  border-bottom: 10em solid #0000ff;
-}
-
 #get-your-answer #answer {
-  position: relative;
+  position: absolute;
   color: #1e90ff;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.4em;
-  line-height: 1.1em;
+  font-size: 1.15em;
+  line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 #get-your-answer.die-down #answer {
-  bottom: 6.3em;
+  bottom: 60px;
+  transform: translateY(30%);
 }
 
 #get-your-answer.die-up #answer {
-  top: 82%;
+  top: 70px;
+  transform: translateY(-50%);
 }
 
 /* .ask-another-question {
