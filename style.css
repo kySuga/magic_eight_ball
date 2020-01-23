@@ -22,7 +22,6 @@ body {
 .main-content h1 {
   font-size: 2.5vw;
   color: #fff;
-  margin-bottom: 0.3em;
 }
 
 .ask-a-question h2 {
@@ -42,11 +41,10 @@ form {
   display: flex;
   justify-content: center;
   align-items: stretch;
-  margin-top: 1em;
 }
 
 #question {
-  max-width: 75vw;
+  max-width: 46vw;
   flex-grow: 1;
   font-size: 1.7em;
   padding: 0.25em;
@@ -76,10 +74,9 @@ button:focus {
 #answer-background {
   display: flex;
   justify-content: center;
-  width: 40em;
-  height: 40em;
+  width: 35em;
+  height: 35em;
   background-image: radial-gradient(#0000ff 0%, transparent 81%);
-  margin-top: 3em;
 }
 
 #get-your-answer {
@@ -110,7 +107,7 @@ button:focus {
 }
 
 #get-your-answer.die-up {
-  top: 100px;
+  top: 80px;
   border-bottom: 10em solid #0000ff;
 }
 
