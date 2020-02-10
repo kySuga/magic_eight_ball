@@ -36,7 +36,7 @@
           <h2>
             Ask Your Question Below
           </h2>
-          <form id="form-btn" onsubmit="return clickSubmitQuestion();">
+          <form id="form-for-question" onsubmit="return clickSubmitQuestion();">
             <input
               id="question"
               type="text"
@@ -48,7 +48,13 @@
               required
             />
             <!-- autocomplete removes any attempted questions or input  -->
-            <button id="submitQuestion" class="btn active" type="submit">
+            <button
+              id="submitQuestion"
+              class="btn not-answered"
+              type="submit"
+              value="Submit Your Question"
+              onclick="resetAnswer2()"
+            >
               Submit Your Question
             </button>
             <!-- <button id="askAnother" class="btn" type="reset" onclick="removeAnswer()">Ask Another Question</button> -->
