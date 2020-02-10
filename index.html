@@ -30,7 +30,7 @@
         <img
           id="eight-ball-img"
           src="images/magic-eight-ball-300x300.png"
-          alt=""
+          alt="Magic Eight Ball"
         />
         <div id="ask-question-section" class="ask-a-question">
           <h2>
@@ -50,14 +50,13 @@
             <!-- autocomplete removes any attempted questions or input  -->
             <button
               id="submitQuestion"
-              class="btn not-answered"
+              class="btn"
               type="submit"
               value="Submit Your Question"
-              onclick="resetAnswer2()"
+              onclick="askQuestion();"
             >
               Submit Your Question
             </button>
-            <!-- <button id="askAnother" class="btn" type="reset" onclick="removeAnswer()">Ask Another Question</button> -->
           </form>
         </div>
         <div id="answer-wrapper"></div>

@@ -120,23 +120,6 @@ function clickSubmitQuestion() {
 };
 
 
-// I want the Submit Your Question button to convert to a Ask Another Question button
-// I believe I need an event listener on the button to listen for a click
-// I want the click to changed the id of submitQuestion to questionAsked that changes the functionality of the button to "reset" the answer and clears the question, using the resetAnswer function
-
-
-// Function that resets answer
-// function updateClass() {
-//   if (this.classList.contains('not-answered')) {
-//     this.classList.remove('not-answered');
-//   } else this.classList.add('answered');
-//   console.log('Adding or removing class answered is working from updateClass');
-// };
-
-// function resetAnswer() {
-//     document.getElementById('submitQuestion').addEventListener('click', updateClass);
-// };
-
 function clickResetButton() {
   // removes answer from DOM when reset button is clicked
   const parentElem = document.getElementById('answer-wrapper');
@@ -145,25 +128,23 @@ function clickResetButton() {
 
   // removes question from form input
   document.getElementById('form-for-question').reset();
-}
 
-
-function resetAnswer2() {
-  // document.getElementById('submitQuestion').addEventListener('click', updateClass2);
+  // changes attribute function back to askQuestion() and updates button value and html
   var btnText = document.getElementById('submitQuestion');
-  if (btnText.value == 'Submit Your Question') {
-    btnText.value = 'Ask Another Question';
-    btnText.innerHTML = 'Ask Another Question';
-    document.getElementById('submitQuestion').setAttribute('onclick', 'javascript: clickResetButton();');
-  } else {
-    document.getElementById('submitQuestion').setAttribute('onclick', 'javascript: resetAnswer2();');
+  if (btnText.value == 'Ask Another Question') {
+    document.getElementById('submitQuestion').setAttribute('onclick', 'askQuestion();');
     btnText.value = 'Submit Your Question';
     btnText.innerHTML = 'Submit Your Question';
   }
-  
-  // if (btnText.value == 'Ask Another Question') {
-  //   document.getElementById('submitQuestion').setAttribute('onclick', 'javascript: clickResetButton();');
-  //   btnText.value = 'Submit Your Question';
-  //   btnText.innerHTML = 'Submit Your Question';
-  // }
-}
+};
+
+
+function askQuestion() {
+  // changes attribute function to clickResetButton() and updates button value and html
+  var btnText = document.getElementById('submitQuestion');
+  if (btnText.value == 'Submit Your Question') {
+    document.getElementById('submitQuestion').setAttribute('onclick', 'clickResetButton();');
+    btnText.value = 'Ask Another Question';
+    btnText.innerHTML = 'Ask Another Question';
+  }
+};
