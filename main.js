@@ -1,57 +1,63 @@
 // Function that validates question
 // function validateQuestion() {
-//   var validYesNoQuestions = [
+//   const validYesNoQuestions = [
 //     'am',
 //     'are',
 //     'aren\'t',
+//     'can',
 //     'can\'t',
+//     'could',
+//     'couldn\'t',
+//     'did',
+//     'didn\'t',
 //     'do',
 //     'does',
-//     'don\'t',
-//     'is',
-//     'should',
-//     'isn\'t',
-//     'will',
-//     'have',
-//     'could',
-//     'had',
-//     'did',
-//     'were',
-//     'was',
-//     'would',
-//     'can',
-//     'has',
-//     'shouldn\'t',
-//     'wouldn\'t',
-//     'couldn\'t',
-//     'hadn\'t',
-//     'didn\'t',
 //     'doesn\'t',
+//     'don\'t',
+//     'if', // added for a 'if..., will...?' question
+//     'is',
+//     'isn\'t',
+//     'had',
+//     'hadn\'t',
+//     'has',
 //     'hasn\'t',
+//     'have',
 //     'haven\'t',
-//     'weren\'t',
 //     'may',
+//     'might',
+//     'must',
 //     'ought',
+//     'should',
+//     'shouldn\'t',
+//     'was',
+//     'were',
+//     'weren\'t',
+//     'will',
 //     'won\'t',
+//     'would',
+//     'wouldn\'t'
 //   ]
 
-  // searches inside of validYesNoQuestions
-  // var question = 
+//   // searches inside of validYesNoQuestions
+//   const question = validYesNoQuestions.some();
+//   const i;
 
-  // if else 
-  // if (question.toLowerCase() == validYesNoQuestions.toLowerCase()) {
-  //   clickSubmitQuestion();
-  // } else {
-  //   alert('Please ask the Magic Eight Ball a valid Yes or No question');
-  // }
+//   for (i = 0; i < question; i++) {}
 
-  // return false;
+//   // if else 
+//   if (question.toLowerCase() == validYesNoQuestions.toLowerCase()) {
+//     clickSubmitQuestion();
+//   } else {
+//     alert('Please ask the Magic Eight Ball a valid Yes or No question');
+//   }
+
+//   return false;
 // }
 
 
 // Function that creates random answer
 function clickSubmitQuestion() {
-  var answers = [
+  const answers = [
     { 'answer': 'It is<br>certain'}, 
     { 'answer': 'Without<br>a<br>doubt'}, 
     { 'answer': 'You may<br>rely on<br>it'}, 
@@ -75,23 +81,23 @@ function clickSubmitQuestion() {
   ]
 
   // randomAnswer takes answer and returns a random answer
-  var randomAnswerID = [Math.floor(Math.random() * answers.length)];
-  var randomAnswerObj = answers[randomAnswerID];
-  var randomAnswer = randomAnswerObj.answer;
+  const randomAnswerID = [Math.floor(Math.random() * answers.length)];
+  const randomAnswerObj = answers[randomAnswerID];
+  const randomAnswer = randomAnswerObj.answer;
   console.log(randomAnswerObj);
 
   // Creates the p for the answer
-  var createAnswer = document.createElement("p");
+  const createAnswer = document.createElement("p");
   createAnswer.setAttribute("id", "answer");
   createAnswer.innerHTML = `${randomAnswer}`;
   console.log("p with random answer");
 
   // Creates div for gradient background
-  var addBackground = document.createElement("div");
+  const addBackground = document.createElement("div");
   addBackground.setAttribute("id", "answer-background");
 
   // Creates div for die
-  var addDie = document.createElement("div");
+  const addDie = document.createElement("div");
   addDie.setAttribute("id", "get-your-answer");
 
   // Determines orientation of die and answer
@@ -111,7 +117,7 @@ function clickSubmitQuestion() {
   console.log("Appends addDie to addBackground");
 
   // Adds die with answer and background to magic eight ball page
-  var answerWrapper = document.getElementById("answer-wrapper");
+  const answerWrapper = document.getElementById("answer-wrapper");
   answerWrapper.innerHTML = addBackground.outerHTML;
 
   console.log("addBackground");
@@ -130,7 +136,7 @@ function clickResetButton() {
   document.getElementById('form-for-question').reset();
 
   // changes attribute function back to askQuestion() and updates button value and html
-  var btnText = document.getElementById('submitQuestion');
+  const btnText = document.getElementById('submitQuestion');
   if (btnText.value == 'Ask Another Question') {
     document.getElementById('submitQuestion').setAttribute('onclick', 'askQuestion();');
     btnText.value = 'Submit Your Question';
@@ -141,7 +147,7 @@ function clickResetButton() {
 
 function askQuestion() {
   // changes attribute function to clickResetButton() and updates button value and html
-  var btnText = document.getElementById('submitQuestion');
+  const btnText = document.getElementById('submitQuestion');
   if (btnText.value == 'Submit Your Question') {
     document.getElementById('submitQuestion').setAttribute('onclick', 'clickResetButton();');
     btnText.value = 'Ask Another Question';
