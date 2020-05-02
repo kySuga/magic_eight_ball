@@ -36,7 +36,7 @@ body {
   /* width: 15vw; */
   width: calc(100px + (210 - 100) * ((100vw - 300px) / (1400 - 300)));
   height: auto;
-  margin: 2em;
+  margin: calc(10px + (20 - 10) * ((100vw - 300px) / (1400 - 300)));
 }
 form {
   display: flex;
@@ -75,9 +75,9 @@ button:focus {
 #answer-background {
   display: flex;
   justify-content: center;
-  width: 35em;
-  height: 35em;
-  background-image: radial-gradient(#0000ff 0%, transparent 81%);
+  width: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
+  height: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
+  background-image: radial-gradient(#00f 0%, transparent 81%);
 }
 #get-your-answer {
   position: relative;
@@ -87,8 +87,8 @@ button:focus {
   height: 0;
   top: 30%;
   margin-top: 3em;
-  border-left: 5.5em solid transparent;
-  border-right: 5.5em solid transparent;
+  border-left: 5em solid transparent;
+  border-right: 5em solid transparent;
   border-radius: 3px;
   opacity: 1;
   animation-name: dieFadeIn;
@@ -106,33 +106,50 @@ button:focus {
 }
 #get-your-answer.die-up {
   top: 80px;
-  border-bottom: 10em solid #0000ff;
+  border-bottom: 9em solid #0000ff;
 }
 #get-your-answer.die-down {
-  border-top: 10em solid #0000ff;
+  border-top: 9em solid #0000ff;
 }
 #get-your-answer #answer {
   position: absolute;
   color: #1e90ff;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.15em;
+  /* font-size: 1.15em; */
+  font-size: calc(10.5px + (11.5 - 10.5) * ((100vw - 300px) / (1400 - 300)));
   line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
 }
 #get-your-answer.die-down #answer {
-  bottom: 60px;
+  /* bottom: 60px; */
+  bottom: calc(50px + (60 - 50) * ((100vw - 300px) / (1400 - 300)));
   transform: translateY(30%);
 }
 #get-your-answer.die-up #answer {
-  top: 70px;
+  /* top: 70px; */
+  top: calc(60px + (70 - 60) * ((100vw - 300px) / (1400 - 300)));
   transform: translateY(-50%);
 }
 /* .ask-another-question {
   border: none;
   padding: 0.7em 1em;
 } */
+
+/* Larger than mobile */
+@media screen and (min-width: 361px) {
+  #get-your-answer {
+    border-left: 5.5em solid transparent;
+    border-right: 5.5em solid transparent;
+  }
+  #get-your-answer.die-up {
+    border-bottom: 10em solid #0000ff;
+  }
+  #get-your-answer.die-down {
+    border-top: 10em solid #0000ff;
+  }
+}
 
 /* Desktop */
 @media screen and (min-width: 1024px) {
