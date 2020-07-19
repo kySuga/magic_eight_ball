@@ -34,6 +34,14 @@ pre {
   max-width: 1400px;
   /* margin: 0 auto; */
 }
+#magic-eight-ball h1 {
+  /* font-size: 2.5vw; */
+  font-size: calc(
+    16px + (35 - 16) * ((100vw - 300px) / (1400 - 300))
+  ); /* Resource: https://css-tricks.com/snippets/css/fluid-typography/ */
+  color: #fff;
+  margin-top: 8vh;
+}
 .main-content h1 {
   /* font-size: 2.5vw; */
   font-size: calc(
