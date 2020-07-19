@@ -7,13 +7,21 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 10px;
 }
-* {
+#magic-eight-ball * {
   box-sizing: border-box;
 }
+#magic-eight-ball {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 .main-content {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -24,6 +32,11 @@ body {
   ); /* Resource: https://css-tricks.com/snippets/css/fluid-typography/ */
   color: #fff;
   margin-top: 8vh;
+}
+.ask-a-question {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
 }
 .ask-a-question h2 {
   /* font-size: 1.5vw; */
@@ -39,10 +52,14 @@ body {
   margin: calc(10px + (20 - 10) * ((100vw - 300px) / (1400 - 300)));
 }
 form {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
+  /* align-items: stretch; may need for larger than mobile */
+  align-items: center;
 }
 #question {
   /* max-width: 46vw; */
@@ -55,6 +72,9 @@ form {
   margin-bottom: 0.25em;
 }
 button {
+  width: calc(
+    230px + (460 - 230) * ((100vw - 300px) / (1400 - 300))
+  ); /* may need to be removed for larger than mobile */
   border: none;
   /* font-size: 1vw; */
   font-size: calc(12px + (14 - 12) * ((100vw - 300px) / (1400 - 300)));
@@ -75,10 +95,15 @@ button:focus {
   position: absolute;
   top: 92vh;
 }
+#answer-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
 #answer-background {
   display: flex;
   justify-content: center;
-  width: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
+  /* width: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300))); */
   height: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
   background-image: radial-gradient(#00f 0%, transparent 81%);
 }
@@ -141,7 +166,7 @@ button:focus {
 } */
 
 /* Larger than mobile */
-@media screen and (min-width: 361px) {
+@media (min-width: 361px) {
   #get-your-answer {
     border-left: 5.5em solid transparent;
     border-right: 5.5em solid transparent;
@@ -155,7 +180,7 @@ button:focus {
 }
 
 /* Desktop */
-@media screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
   form {
     flex-direction: row;
   }
