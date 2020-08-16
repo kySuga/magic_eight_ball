@@ -8,6 +8,8 @@ body {
   height: 100vh;
   box-sizing: border-box;
   margin: 0 auto;
+  /* overflows may have helped horizontal scroll */
+  /* Resource: https://stackoverflow.com/questions/15879710/disabling-horizontal-scroll-on-an-iphone-website */
   overflow: hidden;
   overflow-y: auto;
 }
@@ -26,7 +28,7 @@ pre {
 *:after {
   box-sizing: border-box;
   /* outline to test to see what is causing the horizontal scroll */
-  outline: 1px solid yellow;
+  /* outline: 1px solid yellow; */
 }
 #magic-eight-ball {
   position: relative;
