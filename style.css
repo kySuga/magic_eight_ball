@@ -15,6 +15,7 @@ body {
   /* to test to see what is causing the horizontal scroll */
   width: 90vw;
   height: 100vh;
+  margin: 0 auto;
   overflow: hidden;
   overflow-y: auto;
 }
