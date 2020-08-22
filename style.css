@@ -4,8 +4,6 @@ Used wikipedia for magic eight ball reference: https://en.wikipedia.org/wiki/Mag
 
 html,
 body {
-  width: 100%;
-  height: 100%;
   box-sizing: border-box;
   margin: 0 auto;
   /* overflows may have helped horizontal scroll */
