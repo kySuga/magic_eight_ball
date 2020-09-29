@@ -127,7 +127,7 @@ button:focus {
   width: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
   /* max-width: 30vw; */
   height: calc(300px + (350 - 300) * ((100vw - 300px) / (1400 - 300)));
-  background-image: radial-gradient(#00f 0%, transparent 81%);
+  background-image: radial-gradient(#00f 0%, transparent 75%);
   margin: 0 auto;
 }
 #get-your-answer {
