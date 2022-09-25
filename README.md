@@ -2,7 +2,7 @@
 
 Keeping for nostalgia sake — 
 
-First major, personal project including JS.
+First personal project including JS that wasn't part of a project from an online course or similar.
 
 See [magic8ball-v2](https://github.com/kySuga/magic8ball-v2) for all new iterations moving forward.
 
