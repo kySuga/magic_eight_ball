@@ -1,4 +1,4 @@
-```<!-- Deprecating -->```
+```<!-- Officially deprecated as of 2023-05-08 -->```
 
 Keeping for nostalgia sake — 
 
